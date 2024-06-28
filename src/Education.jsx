@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-window.global ||= window;
-
 function Education({ onEducationUpdate }) {
   const [school, setSchool] = useState('');
   const [location, setLocation] = useState('');
@@ -12,32 +10,32 @@ function Education({ onEducationUpdate }) {
 
   const handleSchoolChange = (event) => {
     setSchool(event.target.value);
-    onEducationUpdate({ school: event.target.value });
+    // onEducationUpdate({ school: event.target.value });
   };
 
   const handleLocationChange = (event) => {
     setLocation(event.target.value);
-    onEducationUpdate({ location: event.target.value });
+    // onEducationUpdate({ location: event.target.value });
   };
 
   const handleDegreeChange = (event) => {
     setDegree(event.target.value);
-    onEducationUpdate({ degree: event.target.value });
+    // onEducationUpdate({ degree: event.target.value });
   };
 
   const handleStartChange = (event) => {
     setStart(event.target.value);
-    onEducationUpdate({ start: event.target.value });
+    // onEducationUpdate({ start: event.target.value });
   };
 
   const handleEndChange = (event) => {
     setEnd(event.target.value);
-    onEducationUpdate({ end: event.target.value });
+    // onEducationUpdate({ end: event.target.value });
   };
 
   const handleGpaChange = (event) => {
     setGpa(event.target.value);
-    onEducationUpdate({ gpa: event.target.value });
+    // onEducationUpdate({ gpa: event.target.value });
   };
 
   return (
@@ -79,6 +77,21 @@ function Education({ onEducationUpdate }) {
           placeholder="3.95"
           onChange={handleGpaChange}
         />
+        <button
+          className="save-form"
+          onClick={() =>
+            onEducationUpdate({
+              school: school,
+              location: location,
+              degree: degree,
+              start: start,
+              end: end,
+              gpa: gpa,
+            })
+          }
+        >
+          Save
+        </button>
       </form>
     </div>
   );

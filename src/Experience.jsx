@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-window.global ||= window;
-
 function Experience({ onExperienceUpdate }) {
   const [company, setCompany] = useState('');
   const [location, setLocation] = useState('');

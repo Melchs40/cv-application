@@ -17,27 +17,33 @@ function Info() {
     setGeneralData({ ...generalData, ...data }); // Update specific properties
   };
 
-  const [educationData, setEducationData] = useState({
-    school: '',
-    location: '',
-    degree: '',
-    start: '',
-    end: '',
-    gpa: '',
-  });
+  const [educationData, setEducationData] = useState([
+    {
+      school: '',
+      location: '',
+      degree: '',
+      start: '',
+      end: '',
+      gpa: '',
+    },
+  ]);
 
   const handleEducationUpdate = (data) => {
-    setEducationData({ ...educationData, ...data });
+    setEducationData((educationData) => [...educationData, data]);
+    console.log(educationData);
+    console.log('hi');
   };
 
-  const [experienceData, setExperienceData] = useState({
-    company: '',
-    location: '',
-    title: '',
-    start: '',
-    end: '',
-    description: '',
-  });
+  const [experienceData, setExperienceData] = useState([
+    {
+      company: '',
+      location: '',
+      title: '',
+      start: '',
+      end: '',
+      description: '',
+    },
+  ]);
 
   const handleExperienceUpdate = (data) => {
     setExperienceData({ ...experienceData, ...data });

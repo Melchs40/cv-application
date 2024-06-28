@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-window.global ||= window;
-
 function General({ onGeneralUpdate }) {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
@@ -62,7 +60,6 @@ function General({ onGeneralUpdate }) {
           <input
             value={email}
             type="email"
-            required="true"
             placeholder="Email Address"
             onChange={handleEmailChange}
           />
