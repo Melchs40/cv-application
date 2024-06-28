@@ -3,6 +3,7 @@ window.global ||= window;
 import { useState } from 'react';
 import General from './General';
 import Education from './Education';
+import Experience from './Experience';
 
 function Info() {
   const [generalData, setGeneralData] = useState({
@@ -29,11 +30,28 @@ function Info() {
     setEducationData({ ...educationData, ...data });
   };
 
+  const [experienceData, setExperienceData] = useState({
+    company: '',
+    location: '',
+    title: '',
+    start: '',
+    end: '',
+    description: '',
+  });
+
+  const handleExperienceUpdate = (data) => {
+    setExperienceData({ ...experienceData, ...data });
+  };
+
   return (
     <>
       <div className="input">
+        <h3 className="general-input-title">General Information</h3>
         <General onGeneralUpdate={handleGeneralUpdate} />
+        <h3 className="general-input-title">Education</h3>
         <Education onEducationUpdate={handleEducationUpdate} />
+        <h3 className="general-input-title">Experience</h3>
+        <Experience onExperienceUpdate={handleExperienceUpdate} />
       </div>
       <div className="resume">
         <div className="general-section">
@@ -64,6 +82,28 @@ function Info() {
           </div>
           <div className="education edu-end">End Date: {educationData.end}</div>
           <div className="education edu-gpa">GPA: {educationData.gpa}</div>
+        </div>
+
+        <div className="experience-section">
+          <h2 className="experience-title">Experience</h2>
+          <div className="experience exp-company">
+            Company Name: {experienceData.company}
+          </div>
+          <div className="experience exp-location">
+            Location: {experienceData.location}
+          </div>
+          <div className="experience exp-title">
+            Title: {experienceData.title}
+          </div>
+          <div className="experience exp-start">
+            Start Date: {experienceData.start}
+          </div>
+          <div className="experience exp-end">
+            End Date: {experienceData.end}
+          </div>
+          <div className="experience exp-decription">
+            Description: {experienceData.description}
+          </div>
         </div>
       </div>
     </>

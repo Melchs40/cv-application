@@ -62,13 +62,13 @@ function Education({ onEducationUpdate }) {
           onChange={handleDegreeChange}
         />
         <input
-          type="date"
+          type="text"
           value={start}
           placeholder="09/01/2020"
           onChange={handleStartChange}
         />
         <input
-          type="date"
+          type="text"
           value={end}
           placeholder="06/01/2024"
           onChange={handleEndChange}
