@@ -1,9 +1,10 @@
 export default function ResumeGeneral({ generalInfo }) {
   return (
     <>
-      <h1>{generalInfo.name}</h1>
-      <h2>{generalInfo.address}</h2>
-      <h2>{generalInfo.number}</h2>
+      <h1>General Info</h1>
+      <h3>{generalInfo.name}</h3>
+      <h3>{generalInfo.address}</h3>
+      <h3>{generalInfo.number}</h3>
       <h3>{generalInfo.email}</h3>
     </>
   );

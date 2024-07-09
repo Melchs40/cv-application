@@ -10,11 +10,19 @@ export default function App() {
     number: '',
     email: '',
   });
+  const [educationInfo, setEducationInfo] = useState([]);
   return (
     <>
       <Title />
-      <InputContainer setGeneralInfo={setGeneralInfo} />
-      <ResumeContainer generalInfo={generalInfo} />
+      <InputContainer
+        setGeneralInfo={setGeneralInfo}
+        setEducationInfo={setEducationInfo}
+        educationInfo={educationInfo}
+      />
+      <ResumeContainer
+        generalInfo={generalInfo}
+        educationInfo={educationInfo}
+      />
     </>
   );
 }
